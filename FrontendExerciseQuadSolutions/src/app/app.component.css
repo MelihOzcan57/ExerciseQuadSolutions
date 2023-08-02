@@ -1,0 +1,56 @@
+.white-block {
+    background-color: white;
+    width: 740px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gray-block {
+    position: relative;
+    background-color: gray;
+    width: 75px;
+    height: 75px;
+    margin: 12px;
+    aspect-ratio: 1 / 1 ;
+}
+
+.question-section {
+    display: flex;
+    text-align: left;
+}
+
+.circle {
+    background-color: lightgray;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.difficulty-section {
+    display: flex;
+}
+
+.answer-section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.button-section {
+    background-color: #86CF74;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    margin: 35px;
+    padding: 10px;
+}
+
+.button-section:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
