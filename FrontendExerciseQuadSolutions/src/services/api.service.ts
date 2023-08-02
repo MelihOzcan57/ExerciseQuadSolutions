@@ -15,5 +15,7 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/questions`);
   }
 
-  // You can add more methods for POST, PUT, DELETE, etc.
+  postAnswers(answers: any[]): Observable<any> {
+    return this.http.post(`${this.baseUrl}/checkanswers`, answers);
+  }
 }

@@ -11,6 +11,7 @@ import { ApiService } from 'src/services/api.service';
 export class AppComponent {
   questions: any;
   selectedAnswers: any[] = new Array(5);
+  answers: any[] = new Array;
 
   constructor(private apiService: ApiService) { }
 
@@ -45,8 +46,9 @@ export class AppComponent {
     }, 0);
 
     if (questionCount == 5) {
-      // ALL QUESTIONS HAVE BEEN FILLED IN!
-
+      // ALL QUESTIONS HAVE BEEN FILLED IN!      
+      this.apiService.postAnswers(this.selectedAnswers).subscribe((res) => this.answers = res);
+           
     } else {
       console.log("Not everything is filled in!");
     }

@@ -4,7 +4,7 @@
     <h1>Technical assignment</h1>
   </div>
 
-  <div *ngFor="let question of questions; let j = index" class="white-block">
+  <div *ngFor="let question of questions; let j = index" class="white-block" [class.correct]="answers[j] === 'Correct'" [class.incorrect]="answers[j] === 'Incorrect'">
     <div class="question-section">
       <div class="gray-block"
         [style.background-image]="'url(assets/images/' + this.categoryEncoded(question.category) + '.png)'"></div>

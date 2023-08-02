@@ -67,3 +67,11 @@
 .difficulty-hard {
     background-color: lightcoral;
 }
+
+.correct {
+    background-color: #70ff7c;
+}
+
+.incorrect {
+    background-color: #ff7092;
+}
