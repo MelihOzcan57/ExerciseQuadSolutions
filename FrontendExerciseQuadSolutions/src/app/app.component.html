@@ -1,31 +1,32 @@
 <div>
-
   <div class="white-block">
     <h1>Quad Solutions</h1>
     <h1>Technical assignment</h1>
   </div>
 
-  <div class="white-block">
+  <div *ngFor="let question of questions; let j = index" class="white-block">
     <div class="question-section">
-      <div class="gray-block"></div>
+      <div class="gray-block"
+        [style.background-image]="'url(assets/images/' + this.categoryEncoded(question.category) + '.png)'"></div>
       <div class="content-section">
-        <p>The Andrew Lloyd Webber musical &quot;Cats&quot; is based off a book of poems written by which author?</p>
+        <p [innerHTML]="question.question"></p>
         <div class="difficulty-section">
-          <div class="circle difficulty-easy"></div>
-          <div class="circle difficulty-medium"></div>
-          <div class="circle difficulty-hard"></div>
+          <div [class.difficulty-easy]="question.difficulty === 'easy'" class="circle"></div>
+          <div [class.difficulty-medium]="question.difficulty === 'medium'" class="circle"></div>
+          <div [class.difficulty-hard]="question.difficulty === 'hard'" class="circle"></div>
         </div>
       </div>
     </div>
     <div class="answer-section">
-      <div>
-        <input type="checkbox">
-        <label>test</label>
+      <div *ngFor="let answer of question.answers; let i = index">
+        <input type="radio" [name]="'question_' + j" [id]="'answer_' + j + '_' + i" [value]="answer"
+          (change)="onRadioButtonChange(j, answer)">
+        <label [for]="'answer_' + j + '_' + i" [innerHTML]="answer"></label>
       </div>
     </div>
   </div>
 
-  <div class="button-section">
+  <div class="button-section" (click)="checkAnswers()">
     Check
   </div>
 </div>

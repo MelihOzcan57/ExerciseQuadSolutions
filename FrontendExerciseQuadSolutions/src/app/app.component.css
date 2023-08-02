@@ -9,11 +9,12 @@
 
 .gray-block {
     position: relative;
-    background-color: gray;
+    background-color: whitesmoke;
     width: 75px;
     height: 75px;
     margin: 12px;
     aspect-ratio: 1 / 1 ;
+    background-size: cover; /* This scales the image to cover the entire element */
 }
 
 .question-section {
@@ -53,4 +54,16 @@
 .button-section:hover {
     opacity: 80%;
     cursor: pointer;
+}
+
+.difficulty-easy {
+    background-color: lightgreen;
+}
+
+.difficulty-medium {
+    background-color: lightsalmon;
+}
+
+.difficulty-hard {
+    background-color: lightcoral;
 }
